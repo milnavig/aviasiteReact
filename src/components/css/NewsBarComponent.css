@@ -1,0 +1,123 @@
+/* Последние новости */
+aside#news {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+aside#news div#news-header {
+    width: 100%;
+    height: 32px;
+    border-bottom: 1px solid white;
+    background-color: #1049A9;
+    text-transform: uppercase;
+    text-shadow: #808080 0 0 1px;
+}
+
+aside#news div#news-header span {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    line-height: 32px;
+}
+  
+.news-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid white;
+    
+}
+
+.news-wrapper:hover {
+    /*background-color: #1049A9;*/
+}
+
+  
+.news-count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%; /* Свойство height, указанное в %, работает только если для внешнего блока указана высота */
+    
+    display: flex;
+    justify-content: center;
+    
+    align-self: center;
+    background-color: #1049A9;
+    /*
+    align-self: center;
+    text-align: center;
+    */
+}
+
+.news-count span {
+    
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    align-self: center; /* ??? */
+}
+  
+.news-header {
+    margin-left: 10%;
+    width: 90%;
+    background-color: white;
+    align-self: center;
+}
+
+.news-hover {
+    background-color: #052C6E;
+}
+
+.news-header h3 {
+    margin: 5px;
+}
+
+.news-header a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.news-list {
+    overflow: auto;
+}
+
+.news-continue {
+    width: 100%;
+    height: 32px;
+    background-color: #1049A9;
+    text-transform: uppercase;
+}
+
+.news-continue a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-shadow: #808080 0 0 1px;
+}
+
+.news-continue a:hover {
+    animation-name: colorchange;
+    animation-duration: 0.7s;
+    background-color: #052C6E;
+}
+
+.news-continue a > span {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    line-height: 32px;
+}
+

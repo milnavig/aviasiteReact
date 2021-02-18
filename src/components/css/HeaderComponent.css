@@ -1,0 +1,19 @@
+/* Декорации и название разделов */
+.section-header {
+    display: flex;
+}
+
+.section-header .decoration {
+    width: 50%;
+    height: 100%;
+    background-color: #1049A9;
+}
+
+.section-header .decoration h3 {
+    margin-left: 150px;
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}

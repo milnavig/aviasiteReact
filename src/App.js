@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import SubMenu from './components/SubMenu';
+import MainMenu from './components/MainMenu';
+import PosterComponent from './components/PosterComponent';
+import HeaderComponent from './components/HeaderComponent';
+import TilesComponent from './components/TilesComponent';
+import SliderParentComponent from './components/SliderParentComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SubMenu />
+      <MainMenu />
+      <PosterComponent />
+      <HeaderComponent title="Наші літаки" identifier="planes-header"/>
+      <TilesComponent />
+      <HeaderComponent title="Галерея" identifier="gallery-header"/>
+      <SliderParentComponent />
+      <HeaderComponent title="Відгуки клієнтів" identifier="feedback-header"/>
+    </>
   );
 }
 

@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+
+* {
+  font-family: Arial, "Times New Roman", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header#main-header div.header-menu menu#main-menu > li, header#main-header div.header-menu menu#main-menu ul.submenu > li {
+  background-color: #1049A9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header#main-header div.header-menu menu#main-menu li a:hover {
+  background-color: #052C6E;
+}
+
+/* Настройка сетки */
+#root {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 800px 1fr 5%;
+  grid-template-rows: 34px 170px 500px 40px 620px 40px 340px 40px 500px 40px 420px 270px 35px;
+  grid-template-areas: "info-panel info-panel info-panel" 
+                        "main-header main-header main-header" 
+                        "main-info main-info main-info" 
+                        "planes-header planes-header planes-header" 
+                        "wrapper wrapper wrapper" 
+                        "gallery-header gallery-header gallery-header" 
+                        "slider slider slider" 
+                        "feedback-header feedback-header feedback-header" 
+                        "feedback feedback feedback" 
+                        "contacts contacts contacts" 
+                        "footer-1 footer-2 footer-3" 
+                        "footer-4 footer-4 footer-4" 
+                        "footer-5 footer-5 footer-5";
+}
+
+header#info-panel {
+  grid-area: info-panel;
+}
+
+header#main-header {
+  grid-area: main-header;
+}
+
+div#main-info {
+  grid-area: main-info;
+}
+
+div#planes-header {
+  grid-area: planes-header;
+  background-color: orange;
+}
+
+div#plane-1 {
+  grid-area: plane-1;
+}
+
+div#plane-2 {
+  grid-area: plane-2;
+}
+
+div#plane-3 {
+  grid-area: plane-3;
+}
+
+aside#schedule {
+  grid-area: schedule;
+}
+
+div#gallery-header {
+  grid-area: gallery-header;
+  background-color: orange;
+}
+
+div#slider {
+  grid-area: slider;
+}
+
+div#feedback-header {
+  grid-area: feedback-header;
+  background-color: orange;
+}
+
+div#feedback-wrapper {
+  grid-area: feedback;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+div#contacts-header {
+  grid-area: contacts;
+  background-color: orange;
+}
+
+footer#footer-1 {
+  grid-area: footer-1;
+}
+
+footer#footer-2 {
+  grid-area: footer-2;
+}
+
+footer#footer-3 {
+  grid-area: footer-3;
+}
+
+footer#footer-4 {
+  grid-area: footer-4;
+  background-color: #1049A9;
+}
+
+footer#footer-5 {
+  grid-area: footer-5;
+  background-color: #052C6E;
+}
+
+div#wrapper {
+  grid-area: wrapper;
+  padding: 0;
+  /*margin: 10px 100px 10px 100px;*/
+  margin: 10px 150px 10px 150px;
+  display: grid;
+  grid-template-columns: 25% 35% 40%;
+  grid-template-rows: 250px 350px;
+  grid-template-areas: "schedule plane-1 plane-2" "schedule plane-3 plane-3";
+  /*
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  */
+}
+
+@keyframes colorchange {
+  0% {
+    background-color: #1049A9;
+  }
+  100% {
+    background-color: #052C6E;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes colorchange-2 {
+  0% {
+    background: rgba(16, 73, 169, 0);
+  }
+  100% {
+    background: rgba(16, 73, 169, 0.7);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes colorchange-3 {
+  0% {
+    background: #A9C1EA;
+  }
+  100% {
+    background: #1049A9;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes colorchange-4 {
+  0% {
+    background: #1049A9;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background: #1049A9;
   }
+}
+
+@keyframes widthchange-1 {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes widthchange-2 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes widthchange-3 {
+  0% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Стилизация полосы прокрутки (только WebKit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(128, 128, 128, 0.5);
 }
