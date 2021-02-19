@@ -52,7 +52,12 @@ class MainMenu extends React.Component {
                         <li><a href="#">Блог</a></li>
                         <li><a href="#">Контакты</a></li>
                     </menu>
-                    <div className={this.state.styles.includes('sticky-menu') ? 'emptyDivOpen expand' : 'emptyDivClose'}></div>
+                    <div className={this.state.styles.includes('sticky-menu') ? 'emptyDivOpen expand' : 'emptyDivClose'}>
+                        <div><i className="fas fa-search fa-lg"></i></div>
+                    </div>
+                </div>
+                <div className={this.state.styles.includes('sticky-menu') ? 'upButtonOpen' : 'upButtonClose'}>
+                    <i class="fas fa-arrow-up"></i>
                 </div>
             </header>
         );

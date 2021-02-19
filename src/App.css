@@ -17,8 +17,8 @@ header#main-header div.header-menu menu#main-menu li a:hover {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 800px 1fr 5%;
-  grid-template-rows: 34px 170px 500px 40px 620px 40px 340px 40px 500px 40px 420px 270px 35px;
+  grid-template-columns: 800px 1fr 15%;
+  grid-template-rows: 34px 170px 500px 40px 620px 40px 340px 40px 500px 40px 420px 390px 35px;
   grid-template-areas: "info-panel info-panel info-panel" 
                         "main-header main-header main-header" 
                         "main-info main-info main-info" 
@@ -29,7 +29,7 @@ header#main-header div.header-menu menu#main-menu li a:hover {
                         "feedback-header feedback-header feedback-header" 
                         "feedback feedback feedback" 
                         "contacts contacts contacts" 
-                        "footer-1 footer-2 footer-3" 
+                        "footer-1 footer-2 footer-2" 
                         "footer-4 footer-4 footer-4" 
                         "footer-5 footer-5 footer-5";
 }
@@ -83,8 +83,8 @@ div#feedback-header {
 
 div#feedback-wrapper {
   grid-area: feedback;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
 div#contacts-header {
@@ -106,7 +106,6 @@ footer#footer-3 {
 
 footer#footer-4 {
   grid-area: footer-4;
-  background-color: #1049A9;
 }
 
 footer#footer-5 {
@@ -165,6 +164,15 @@ div#wrapper {
   }
 }
 
+@keyframes colorchange-5 {
+  0% {
+    border-color: white;
+  }
+  100% {
+    border-color: #052C6E;
+  }
+}
+
 @keyframes widthchange-1 {
   0% {
     width: 100%;
@@ -176,7 +184,7 @@ div#wrapper {
 
 @keyframes widthchange-2 {
   0% {
-    width: 0;
+    width: 180px;
   }
   100% {
     width: 100%;

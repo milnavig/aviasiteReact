@@ -6,6 +6,9 @@ import PosterComponent from './components/PosterComponent';
 import HeaderComponent from './components/HeaderComponent';
 import TilesComponent from './components/TilesComponent';
 import SliderParentComponent from './components/SliderParentComponent';
+import {default as R} from './components/ReviewComponent';
+import ContactsComponent from './components/ContactsComponent';
+import FooterComponent from './components/FooterComponent';
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
       <HeaderComponent title="Галерея" identifier="gallery-header"/>
       <SliderParentComponent />
       <HeaderComponent title="Відгуки клієнтів" identifier="feedback-header"/>
+      <R></R>
+      <HeaderComponent title="Контакти" identifier="contacts-header"/>
+      <ContactsComponent></ContactsComponent>
+      <FooterComponent />
     </>
   );
 }
