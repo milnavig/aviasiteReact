@@ -1,13 +1,11 @@
 /* Футтер */
 
-$bgcol: #1049A9;
-
 footer#footer-4 {
     border-top: 5px solid orange;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $bgcol;
+    background-color: $color_light;
 
     div#white_logo {
         /*margin: auto;*/

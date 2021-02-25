@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './css/TilesComponent.css';
+//import './css/TilesComponent.css';
 import plane1 from '../assets/images/plane1.png';
 import plane2 from '../assets/images/plane2.png';
 import plane3 from '../assets/images/plane3.png';

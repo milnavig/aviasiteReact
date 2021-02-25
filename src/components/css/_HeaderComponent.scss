@@ -1,0 +1,20 @@
+/* Декорации и название разделов */
+.section-header {
+    display: flex;
+    background-color: orange;
+
+    .decoration {
+        width: 50%;
+        height: 100%;
+        background-color: $color_light;
+
+        h3 {
+            margin-left: 150px;
+            margin-top: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+        }
+    }
+}

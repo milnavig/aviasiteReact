@@ -1,0 +1,67 @@
+.news-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid white;
+    
+    .news-count {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10%;
+        height: 100%; /* Свойство height, указанное в %, работает только если для внешнего блока указана высота */
+        
+        display: flex;
+        justify-content: center;
+        
+        align-self: center;
+        background-color: $color_light;
+        /*
+        align-self: center;
+        text-align: center;
+        */
+
+        span {
+    
+            font-size: 30px;
+            font-style: italic;
+            font-weight: bold;
+            color: white;
+            align-self: center; /* ??? */
+        }
+    }
+
+    .news-header {
+        margin-left: 10%;
+        width: 90%;
+        background-color: white;
+        align-self: center;
+
+        h3 {
+            margin: 5px;
+        }
+
+        a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+    }
+}
+
+/* Стилизация полосы прокрутки (только WebKit) */
+#news ::-webkit-scrollbar {
+    width: 6px;
+}
+  
+#news ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+#news ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(128, 128, 128, 0.5);
+}

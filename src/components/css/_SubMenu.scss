@@ -6,51 +6,52 @@ header#info-panel {
     display: flex;
     justify-content: flex-end;
 
-    background-color: #1049A9;
+    background-color: $color_light;
     color: white;
-}
 
-ul#header-list {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-  
-ul#header-list > li:last-child {
-    margin-right: 200px;
-}
+    ul#header-list {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
 
-ul#header-list li {
-    display: block;
-    margin: 0;
-}
+        & > li:last-child {
+            margin-right: 200px;
+        }
 
-ul#header-list li:nth-child(2) {
-    position: relative;
-}
-  
-ul#header-list li > p {
-    margin: 0;
-    font-size: 18px;
-    padding: 7px 25px 0 15px;
-}
-  
-ul#header-list li > a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    
-    height: 100%;
-    margin: auto;
-    padding: 0 25px 0 25px;
-}
-  
-ul#header-list li i {
-    display: block;
-    font-size: 17px;
-    width: 15px;
-    height: 15px;
+        li {
+            display: block;
+            margin: 0;
+
+            &:nth-child(2) {
+                position: relative;
+            }
+
+            & > p {
+                margin: 0;
+                font-size: 18px;
+                padding: 7px 25px 0 15px;
+            }
+
+            & > a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                
+                height: 100%;
+                margin: auto;
+                padding: 0 25px 0 25px;
+            }
+
+            i {
+                display: block;
+                font-size: 17px;
+                width: 15px;
+                height: 15px;
+            }
+
+        }
+    }
 }
 
 ul#header-list li div:not(.hidNumbers) {

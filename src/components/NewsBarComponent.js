@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/NewsBarComponent.css';
+//import './css/NewsBarComponent.css';
 import NewsContainerComponent from './NewsContainerComponent';
 
 class NewsBarComponent extends React.Component {

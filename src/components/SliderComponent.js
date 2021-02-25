@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/SliderComponent.css';
+//import './css/SliderComponent.css';
 import prev from '../assets/images/slider_pic/prev.png';
 import next from '../assets/images/slider_pic/next.png';
 

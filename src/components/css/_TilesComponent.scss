@@ -32,23 +32,27 @@ div.wrapper-2 {
     animation-name: colorchange-2;
     animation-duration: 1s;
     overflow: auto;
-}
 
-div.wrapper-2 h4 {
-    margin: 0;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
+    h4 {
+        margin: 0;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
 
-div.wrapper-2 p {
-    color: white;
+    p {
+        color: white;
+    }
 }
   
 .hover:hover .wrapper-2 {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.hover:hover .plane-name {
+    display: none;
 }
   
 a.plane-info {
@@ -68,8 +72,4 @@ div.plane-name {
     bottom: 0px;
     right: 0px;
     /* теперь по правой стороне блока. Вместо float:right; */
-}
-  
-.hover:hover .plane-name {
-    display: none;
 }

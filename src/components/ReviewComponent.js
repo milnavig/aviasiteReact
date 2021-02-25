@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './css/ReviewComponent.scss';
+//import './css/ReviewComponent.scss';
 import arrow from '../assets/images/arrow.svg';
 import userpic from '../assets/images/userpic.png';
 

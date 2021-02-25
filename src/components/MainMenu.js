@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/MainMenu.scss';
+//import './css/MainMenu.scss';
 import logo from './../assets/images/logo.png';
 import plane from './../assets/images/plane.svg';
 

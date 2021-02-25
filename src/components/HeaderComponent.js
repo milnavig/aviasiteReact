@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/HeaderComponent.css';
+// import './css/HeaderComponent.css';
 import delimiter from '../assets/images/delimiter.svg';
 
 class HeaderComponent extends React.Component {

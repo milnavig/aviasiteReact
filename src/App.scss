@@ -4,198 +4,47 @@
   font-family: Arial, "Times New Roman", sans-serif;
 }
 
-header#main-header div.header-menu menu#main-menu > li, header#main-header div.header-menu menu#main-menu ul.submenu > li {
-  background-color: #1049A9;
-}
 
-header#main-header div.header-menu menu#main-menu li a:hover {
-  background-color: #052C6E;
-}
+@import './components/css/dev';
 
 /* Настройка сетки */
-#root {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 800px 1fr 15%;
-  grid-template-rows: 34px 170px 500px 40px 620px 40px 340px 40px 500px 40px 420px 390px 35px;
-  grid-template-areas: "info-panel info-panel info-panel" 
-                        "main-header main-header main-header" 
-                        "main-info main-info main-info" 
-                        "planes-header planes-header planes-header" 
-                        "wrapper wrapper wrapper" 
-                        "gallery-header gallery-header gallery-header" 
-                        "slider slider slider" 
-                        "feedback-header feedback-header feedback-header" 
-                        "feedback feedback feedback" 
-                        "contacts contacts contacts" 
-                        "footer-1 footer-2 footer-2" 
-                        "footer-4 footer-4 footer-4" 
-                        "footer-5 footer-5 footer-5";
-}
+@import './components/css/grid';
 
-header#info-panel {
-  grid-area: info-panel;
-}
+/* Панель с социальными кнопками */
+@import './components/css/SubMenu';
 
-header#main-header {
-  grid-area: main-header;
-}
+/* Лого и название сайта + Главное меню */
+@import './components/css/MainMenu';
 
-div#main-info {
-  grid-area: main-info;
-}
+/* Фон приветствия */
+@import './components/css/PosterComponent';
 
-div#planes-header {
-  grid-area: planes-header;
-  background-color: orange;
-}
+/* Декорации и название разделов */
+@import './components/css/HeaderComponent';
 
-div#plane-1 {
-  grid-area: plane-1;
-}
+/* Плитки */
+@import './components/css/TilesComponent';
 
-div#plane-2 {
-  grid-area: plane-2;
-}
+/* Слайдер */
+@import './components/css/SliderComponent';
 
-div#plane-3 {
-  grid-area: plane-3;
-}
+/* Отзывы */
+@import './components/css/ReviewComponent';
 
-aside#schedule {
-  grid-area: schedule;
-}
+/* Последние новости */
+@import './components/css/NewsContainerComponent';
+@import './components/css/NewsBarComponent';
 
-div#gallery-header {
-  grid-area: gallery-header;
-  background-color: orange;
-}
+/* Контакты */
+@import './components/css/ContactsComponent';
 
-div#slider {
-  grid-area: slider;
-}
+/* Футтер */
+@import './components/css/FooterComponent';
 
-div#feedback-header {
-  grid-area: feedback-header;
-  background-color: orange;
-}
+/* Search */
+@import './components/css/SearchComponent';
 
-div#feedback-wrapper {
-  grid-area: feedback;
-  padding-left: 150px;
-  padding-right: 150px;
-}
+/* Animations */
+@import './components/css/animations';
 
-div#contacts-header {
-  grid-area: contacts;
-  background-color: orange;
-}
 
-footer#footer-1 {
-  grid-area: footer-1;
-}
-
-footer#footer-2 {
-  grid-area: footer-2;
-}
-
-footer#footer-3 {
-  grid-area: footer-3;
-}
-
-footer#footer-4 {
-  grid-area: footer-4;
-}
-
-footer#footer-5 {
-  grid-area: footer-5;
-  background-color: #052C6E;
-}
-
-div#wrapper {
-  grid-area: wrapper;
-  padding: 0;
-  /*margin: 10px 100px 10px 100px;*/
-  margin: 10px 150px 10px 150px;
-  display: grid;
-  grid-template-columns: 25% 35% 40%;
-  grid-template-rows: 250px 350px;
-  grid-template-areas: "schedule plane-1 plane-2" "schedule plane-3 plane-3";
-  /*
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  */
-}
-
-@keyframes colorchange {
-  0% {
-    background-color: #1049A9;
-  }
-  100% {
-    background-color: #052C6E;
-  }
-}
-
-@keyframes colorchange-2 {
-  0% {
-    background: rgba(16, 73, 169, 0);
-  }
-  100% {
-    background: rgba(16, 73, 169, 0.7);
-  }
-}
-
-@keyframes colorchange-3 {
-  0% {
-    background: #A9C1EA;
-  }
-  100% {
-    background: #1049A9;
-  }
-}
-
-@keyframes colorchange-4 {
-  0% {
-    background: orange;
-  }
-  100% {
-    background: orange;
-  }
-}
-
-@keyframes colorchange-5 {
-  0% {
-    border-color: white;
-  }
-  100% {
-    border-color: #052C6E;
-  }
-}
-
-@keyframes widthchange-1 {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes widthchange-2 {
-  0% {
-    width: 180px;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes widthchange-3 {
-  0% {
-    width: 100px;
-  }
-  100% {
-    width: 0;
-  }
-}
