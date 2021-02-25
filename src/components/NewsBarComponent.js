@@ -21,7 +21,7 @@ class NewsBarComponent extends React.Component {
                     <NewsContainerComponent identifier="5" header="Иностранцы скупают сверхлегкие украинские самолеты" />
                     <NewsContainerComponent identifier="6" header="Одесский авиазавод будет выпускать самолеты совместно с Чехией и США" />
                     <NewsContainerComponent identifier="7" header="Знаковое событие. Соглашение Антонова с Boeing" />
-                    <NewsContainerComponent identifier="8" header="Антонов заключил соглашения на авиасалоне Farnborough" />
+                    <NewsContainerComponent identifier="8" header="Антонов заключил соглашения на авиасалоне Farnborough. Антонов заключил соглашения на авиасалоне Farnborough" />
                     <NewsContainerComponent identifier="9" header="Boeing и Airbus заключили в Фарнборо сделки на $43 млрд" />
                 </div>
                 <div className="news-continue">

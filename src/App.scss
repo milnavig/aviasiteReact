@@ -157,10 +157,10 @@ div#wrapper {
 
 @keyframes colorchange-4 {
   0% {
-    background: #1049A9;
+    background: orange;
   }
   100% {
-    background: #1049A9;
+    background: orange;
   }
 }
 
@@ -198,19 +198,4 @@ div#wrapper {
   100% {
     width: 0;
   }
-}
-
-/* Стилизация полосы прокрутки (только WebKit) */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 3px;
-  background-color: rgba(128, 128, 128, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: rgba(128, 128, 128, 0.5);
 }

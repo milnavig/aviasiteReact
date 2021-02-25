@@ -72,18 +72,22 @@ ul#header-list li div:not(.hidNumbers) {
   
 .facebook:hover {
     background-color: #3c5b9b;
+    transition: background-color .2s ease-in-out;
 }
   
 .twitter:hover {
     background-color: #359bed;
+    transition: background-color .2s ease-in-out;
 }
   
 .telegram:hover {
     background-color: #3ab6e5;
+    transition: background-color .2s ease-in-out;
 }
   
 .rss:hover {
     background-color: #f08421;
+    transition: background-color .2s ease-in-out;
 }
 
 .hidNumbers {

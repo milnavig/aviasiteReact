@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/MainMenu.css';
+import './css/MainMenu.scss';
 import logo from './../assets/images/logo.png';
 import plane from './../assets/images/plane.svg';
 
@@ -30,6 +30,12 @@ class MainMenu extends React.Component {
         }
     }
 
+    openSearch(e) {
+        e.preventDefault();
+        
+        this.props.toggle({ style: 'flex' });
+    }
+
     render() {
         return (
             <header id="main-header">
@@ -53,11 +59,13 @@ class MainMenu extends React.Component {
                         <li><a href="#">Контакты</a></li>
                     </menu>
                     <div className={this.state.styles.includes('sticky-menu') ? 'emptyDivOpen expand' : 'emptyDivClose'}>
-                        <div><i className="fas fa-search fa-lg"></i></div>
+                        <div onClick={(e) => this.openSearch(e)}><i className="fas fa-search fa-lg"></i></div>
                     </div>
                 </div>
                 <div className={this.state.styles.includes('sticky-menu') ? 'upButtonOpen' : 'upButtonClose'}>
-                    <i class="fas fa-arrow-up"></i>
+                    <a href="#top">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
                 </div>
             </header>
         );

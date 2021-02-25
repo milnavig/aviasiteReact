@@ -1,27 +1,25 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import SearchComponent from './SearchComponent';
 
 import './css/SubMenu.css';
 
 class SubMenu extends Component {
     constructor() {
         super();
-        this.state = { style: 'none' };
+        /*this.state = { style: 'none' };*/
     }
 
     openSearch(e) {
         e.preventDefault();
         
-        this.setState({ style: 'flex' });
+        this.props.toggle({ style: 'flex' });
     }
 
     render() {
         return (
             <React.Fragment>
-                <SearchComponent open={this.state.style} />
-                <header id="info-panel">
+                <header id="info-panel" name="top">
                 
                     <ul id="header-list">
                         <li className="phone"><div><i className="fas fa-phone-alt fa-lg" title="Telephone"></i></div></li>
