@@ -1,14 +1,7 @@
 @charset "UTF-8";
 
-* {
-  font-family: Arial, "Times New Roman", sans-serif;
-}
-
-
 @import './components/css/dev';
 
-/* Настройка сетки */
-@import './components/css/grid';
 
 /* Панель с социальными кнопками */
 @import './components/css/SubMenu';

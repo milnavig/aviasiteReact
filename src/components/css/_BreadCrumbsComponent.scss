@@ -1,0 +1,16 @@
+.breadcrumbs {
+    height: 30px;
+    color: white;
+
+    div {
+        display: inline-block;
+        height: 100%;
+        background-color: $color_light;
+        padding-left: 150px;
+        padding-right: 30px;
+        
+        span {
+            line-height: 30px;
+        }
+    }
+}

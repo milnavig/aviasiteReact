@@ -22,7 +22,7 @@ class MainPageComponent extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="grid-for-main-page">
                 <SearchComponent open={this.state.style} />
                 <SubMenu toggle={(el) => this.setState(el)} />
                 <MainMenu toggle={(el) => this.setState(el)} />
@@ -36,7 +36,7 @@ class MainPageComponent extends React.Component {
                 <HeaderComponent title="Контакти" identifier="contacts-header"/>
                 <ContactsComponent></ContactsComponent>
                 <FooterComponent />
-            </>
+            </div>
         );
     }
 }
