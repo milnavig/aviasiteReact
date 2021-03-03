@@ -1,0 +1,71 @@
+.comments {
+    div.comment {
+        display: flex;
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 23px;
+            border: 3px solid white;
+        
+            &:hover {
+                border: 3px solid #052C6E;
+                animation-name: colorchange-5;
+                animation-duration: 2s;
+            }
+        }
+        .comment-arrow {
+            margin-top: 16px;
+            width: 20px;
+            height: 20px;
+        }
+        div.comment-text {
+            margin-top: 16px;
+            background-color: #F0F0F0;
+            border-radius: 15px;
+            border-top-left-radius: 0px;
+            
+            p.comment-container {
+                margin: 0;
+                padding: 0 15px 15px 15px;
+            }
+
+            p.comment-author {
+                margin: 0;
+                padding: 15px;
+                font-size: 12px;
+                font-weight: bold;
+                span {
+                    border-bottom: 1px black dashed;
+                }
+            }
+        }
+    }
+    textarea {
+        min-width: 300px;
+        max-width: 500px;
+        min-height: 100px;
+        font-size: 16px;
+    }
+    .form-buttons {
+        margin-top: 10px;
+        button {
+            outline: none;
+            border: 0;
+            border-radius: 5px;
+            width: 80px;
+            height: 30px;
+            margin-right: 10px;
+            color: white;
+            cursor: pointer;
+
+            &:nth-child(1) {
+                background-color: rgba(158, 158, 158, 0.9);
+            }
+            
+            &:nth-child(2) {
+                background-color: #1049A9;
+            }
+        }
+    }
+}

@@ -1,8 +1,19 @@
-.addition-data {
-    font-size: 14px;
-    color: $color_grey;
-    span {
-        padding-left: 5px;
-        padding-right: 5px;
+.article {
+    background-color: white;
+    padding: 50px;
+    margin-bottom: 20px;
+
+    .addition-data {
+        font-size: 14px;
+        color: $color_grey;
+        span {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
     }
+    
+    .share-buttons * {
+        margin: 2px;
+    }
+    
 }

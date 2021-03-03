@@ -1,5 +1,7 @@
 import React from 'react';
 //import './css/_NewsArticleComponent.scss';
+import SocialButtonsComponents from './SocialButtonsComponents';
+import CommentsComponent from './CommentsComponent';
 
 class NewsArticleComponent extends React.Component {
     constructor(props) {
@@ -35,6 +37,8 @@ class NewsArticleComponent extends React.Component {
                     Ранее сообщалось, что Государственное предприятие "Антонов" готово начать практическую работу по 100% импортозамещению материалов и комплектующих российского происхождения в самолетах семейства Ан-72/74 при условии финансирования.
                     </p>
                 </article>
+                <SocialButtonsComponents />
+                <CommentsComponent />
             </div>
         );
     }

@@ -17,6 +17,11 @@ $areas: "info-panel info-panel info-panel"
 .grid-for-main-page {
     padding: 0;
     margin: 0;
+    background-image: url("../../assets/images/wall.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: -280px;
+    background-color: #93B4D1;
     display: grid;
     grid-template-columns: $columns;
     grid-template-rows: $rows;
@@ -71,6 +76,7 @@ div#feedback-wrapper {
     grid-area: feedback;
     padding-left: 150px;
     padding-right: 150px;
+    background-color: white;
 }
 
 div#contacts-header {
@@ -79,10 +85,12 @@ div#contacts-header {
 
 footer#footer-1 {
     grid-area: footer-1;
+    background-color: white;
 }
 
 footer#footer-2 {
     grid-area: footer-2;
+    background-color: white;
 }
 
 footer#footer-4 {
@@ -96,8 +104,9 @@ footer#footer-5 {
 
 div#wrapper {
     grid-area: wrapper;
+    background-color: white;
     padding: 0;
-    margin: 10px 150px 10px 150px;
+    padding: 10px 150px 10px 150px;
     display: grid;
     grid-template-columns: 25% 35% 40%;
     grid-template-rows: 250px 350px;

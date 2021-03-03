@@ -7,6 +7,7 @@ import FooterComponent from './FooterComponent';
 import SearchComponent from './SearchComponent';
 import NewsArticleComponent from './NewsArticleComponent';
 import BreadCrumbsComponent from './BreadCrumbsComponent';
+import LastNewsBarComponent from './LastNewsBarComponent';
 
 class MainPageComponent extends React.Component {
     constructor(props) {
@@ -21,9 +22,10 @@ class MainPageComponent extends React.Component {
             <div className="grid-for-article-page">
                 <SearchComponent open={this.state.style} />
                 <SubMenu toggle={(el) => this.setState(el)} />
-                <MainMenu toggle={(el) => this.setState(el)} />
+                <MainMenu toggle={(el) => this.setState(el)} />                
                 <BreadCrumbsComponent />
                 <NewsArticleComponent />
+                <LastNewsBarComponent />
                 <FooterComponent />
             </div>
         );
