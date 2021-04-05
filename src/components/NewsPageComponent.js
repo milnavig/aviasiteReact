@@ -24,7 +24,7 @@ class MainPageComponent extends React.Component {
                 <SubMenu toggle={(el) => this.setState(el)} />
                 <MainMenu toggle={(el) => this.setState(el)} />                
                 <BreadCrumbsComponent />
-                <NewsArticleComponent />
+                <NewsArticleComponent articleID={this.props.location.pathname.split('/')[2]} />
                 <LastNewsBarComponent />
                 <FooterComponent />
             </div>

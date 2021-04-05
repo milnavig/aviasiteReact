@@ -54,6 +54,7 @@
     .pagination-a:hover {
         background-color: $color_light;
         color: #fff;
+        cursor: pointer;
     }
     .active a {
         
@@ -77,5 +78,10 @@
         display: block;
         width: 30px;
         height: 30px;
+    }
+    .loader {
+        display: flex;
+        justify-content: center;
+        margin: 100px;
     }
 }

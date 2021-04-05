@@ -2,6 +2,9 @@ import React from 'react';
 import data from '../assets/data/news';
 
 import ReactPaginate from 'react-paginate'; // https://github.com/AdeleD/react-paginate
+import Loader from "react-loader-spinner";
+
+import {Link} from "react-router-dom";
 
 let NewsBlock = (props) => {
 
@@ -10,7 +13,7 @@ let NewsBlock = (props) => {
             <div className="news-block-wrapper">
                 <img src={props.data.image} title=""/>
                 <div className="content">
-                    <h2><a href={props.data.url}>{props.data.headline}</a></h2>
+                    <h2><Link to={"/news/" + props.data.id}>{props.data.headline}</Link></h2>
                     <p>{props.data.body.split(' ').slice(0, 30).join(' ') + '...'}</p>
                 </div>
             </div>
@@ -30,25 +33,46 @@ class NewsListComponent extends React.Component {
         super(props);
         this.state = {
             style: 'none',
-            offset: 0
+            offset: {selected: 0},
+            isLoading: true,
+            pageCount: 0,
+            news: []
         }
     }
 
-    handlePageClick = (data) => {
-        this.setState({ offset: data });
+    componentDidMount() {
+        let num_pages = Math.ceil(data.length / 10);
+        this.setState({ pageCount: num_pages, isLoading: false });
+    }
+
+    handlePageClick = (page) => {  
+        this.setState({ offset: page });  
     };
 
     render() {
-        return (
+        return this.state.isLoading ? (
+            <div className="list">
+                <div className="loader">
+                    <Loader
+                        type="Circles"
+                        color="#1049A9"
+                        height={100}
+                        width={100}
+                        
+                    />
+                </div>
+            </div>
+            
+        ) : (
             <div className="list">
                 <h1>Останні новини</h1>
-                {data.map(news => <NewsBlock data={news}></NewsBlock>)}
+                {data.slice(this.state.offset.selected*10, this.state.offset.selected*10 + 10).map((news, index) => <NewsBlock data={news} key={index}></NewsBlock>)}
                 <ReactPaginate
                     previousLabel={''}
                     nextLabel={''}
                     breakLabel={'...'}
                     breakClassName={'break-me'}
-                    pageCount={12}
+                    pageCount={this.state.pageCount}
                     marginPagesDisplayed={2}
                     pageRangeDisplayed={5}
                     onPageChange={this.handlePageClick}

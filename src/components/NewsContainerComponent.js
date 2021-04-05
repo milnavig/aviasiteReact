@@ -1,5 +1,7 @@
 import React from 'react';
 //import './css/NewsContainerComponent.css';
+import data from '../assets/data/news';
+import {Link} from "react-router-dom";
 
 class NewsContainerComponent extends React.Component {
     constructor(props) {
@@ -26,9 +28,9 @@ class NewsContainerComponent extends React.Component {
     render() {
         return (
             <div className="news-wrapper">
-                <div className={this.state.styles}><span>{this.props.identifier}</span></div>
+                <div className={this.state.styles}><span>{this.props.pos}</span></div>
                 <div className="news-header" onMouseEnter={(e) => this.enterArea(e)} onMouseLeave={(e) => this.leaveArea(e)}>
-                    <h3><a href="#">{this.props.header}</a></h3>
+                    <h3><Link to={"/news/" + this.props.identifier}>{this.props.header}</Link></h3>
                 </div>
             </div>
         );

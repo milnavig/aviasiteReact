@@ -19,8 +19,7 @@ function App() {
         <Route exact path="/">
           <MainPageComponent />
         </Route>
-        <Route path="/news">
-          <NewsPageComponent />
+        <Route path="/news/:id" component={NewsPageComponent}>
         </Route>
         <Route path="/topnews">
           <NewsListPageComponent />
