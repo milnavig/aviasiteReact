@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 import MainPageComponent from './components/MainPageComponent';
 import NewsPageComponent from './components/NewsPageComponent';
+import NewsListPageComponent from './components/NewsListPageComponent';
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/news">
           <NewsPageComponent />
+        </Route>
+        <Route path="/topnews">
+          <NewsListPageComponent />
         </Route>
       </Switch>
     </Router>

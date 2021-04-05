@@ -22,6 +22,7 @@ $areas: "info-panel info-panel info-panel"
     background-repeat: no-repeat;
     background-position-y: -280px;
     background-color: #93B4D1;
+    background-attachment: fixed; // закрепляем фоновое изображение
     display: grid;
     grid-template-columns: $columns;
     grid-template-rows: $rows;

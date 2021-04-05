@@ -1,13 +1,12 @@
 $columns: 150px 1fr 350px 150px;
-$rows: 34px 170px 80px auto 390px 35px;
+$rows: 34px 170px auto 390px 35px;
 $areas: "info-panel info-panel info-panel info-panel" 
         "main-header main-header main-header main-header"
-        "breadcrumbs breadcrumbs breadcrumbs breadcrumbs" 
-        ". show-article news-list-bar ."
+        ". list news-list-bar ."
         "footer-4 footer-4 footer-4 footer-4" 
         "footer-5 footer-5 footer-5 footer-5";
 
-.grid-for-article-page {
+.grid-for-list-page {
     padding: 0;
     margin: 0;
     background-image: url("../../assets/images/wall.jpg");
@@ -31,13 +30,9 @@ header#main-header {
     grid-area: main-header;
 }
 
-div.breadcrumbs {
-    grid-area: breadcrumbs;
-    
-}
 
-div.article {
-    grid-area: show-article;
+div.list {
+    grid-area: list;
 }
 
 div.news-list-bar {

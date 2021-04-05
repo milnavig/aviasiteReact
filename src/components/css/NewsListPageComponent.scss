@@ -1,0 +1,8 @@
+$color_grey: rgba(158, 158, 158, 0.9);
+$color_light: #1049A9;
+$color_dark: #052C6E;
+
+/* Настройка сетки */
+@import './grid_news_list';
+
+@import './NewsListComponent';
