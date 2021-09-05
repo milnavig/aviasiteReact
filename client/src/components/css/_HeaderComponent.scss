@@ -1,0 +1,26 @@
+/* Декорации и название разделов */
+.section-header {
+    display: flex;
+    background-color: orange;
+
+    .decoration {
+        width: 50%;
+        height: 100%;
+        background-color: $color_light;
+
+        h3 {
+            margin-left: 16%;
+            margin-top: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .decoration { 
+        width: 80% !important;
+    }
+}

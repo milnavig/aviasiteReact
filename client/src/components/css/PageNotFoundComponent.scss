@@ -1,0 +1,18 @@
+$color_grey: rgba(158, 158, 158, 0.9);
+$color_light: #1049A9;
+$color_dark: #052C6E;
+
+/* Настройка сетки */
+@import './grid_notfound';
+
+.message-404 {
+    background-color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    h1 {
+        text-align: center;
+    }
+}

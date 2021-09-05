@@ -1,0 +1,349 @@
+/* Лого и название сайта */
+
+div#logo-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img#logo {
+        display: block;
+        width: 110px;
+        height: 110px;
+    }
+
+    div#site-name {
+        font-family: $font;
+        font-weight: bold;
+        color: #fff;
+        font-size: 3em;
+
+        span {
+            color: $color_light;
+        }
+    }
+}
+  
+/* Делаю главное меню */
+header#main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //background-image: url("../../assets/images/wall.jpg");
+    //background-size: cover;
+    //background-position-y: -110px;
+    background-origin: border-box;
+
+    padding-left: 100px;
+
+    div.header-menu {
+        font: bold 16px Helvetica, "Times New Roman", monospace; /* */
+        text-transform: uppercase;
+        display: flex;
+        height: 49px;
+
+        menu#main-menu {
+            list-style-type: none;
+            list-style-position: inside;
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            /* Для выпадающего меню */
+            z-index: 1;
+
+            & > li {
+                display: flex;
+                align-content: center;
+                white-space: pre;
+
+                flex-direction: row;
+                padding: 0; /* 15px 0 15px 0 */
+                margin: 0px;
+                background-color: $color_light;
+
+                & > a {
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    padding: 15px 35px 15px 35px;
+                }
+
+                &:first-child {
+                    padding-left: 20px;
+                }
+            }
+
+            ul.submenu {
+                display: none;
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+                position: absolute;
+
+                li a {
+                    display: flex;
+                    justify-content: center;
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    width: 100%;
+                    padding: 12px 0 12px 0;
+                }
+
+                & > li {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0px;
+                    margin: 0;
+                    width: 150px;
+                    background-color: $color_light;
+
+                    &:last-child {
+                        padding-bottom: 10px;
+                        border-radius: 0 0 10px 10px;
+                    }
+
+                    &:first-child {
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            li {
+                &:hover > ul {
+                    display: list-item;
+                    top: 49px;
+                }
+
+                a {
+                    &:hover {
+                        background-color: $color_dark;
+                        animation-name: colorchange;
+                        animation-duration: .7s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sticky-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 90;
+}
+
+.emptyDivClose {
+    display: none;
+}
+
+.emptyDivOpen {
+    display: block;
+}
+
+.emptyDivOpen div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    width: 30px;
+}
+
+.emptyDivOpen div {
+    float: right;
+    margin-right: 150px;
+}
+
+.collapse {
+    animation-name: widthchange-1;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-in-out;
+    height: 100%;
+    width: 0%;
+}
+
+.expand {
+    background-color: $color_light;
+    animation-name: widthchange-2;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+/*
+.collapse ~ .plane {
+    animation-name: colorchange-4;
+    animation-duration: 1.0s;
+    animation-delay: 1.0s;
+    animation-fill-mode: forwards; // the target will retain the computed values set by the last keyframe encountered during execution 
+} */
+
+
+
+.emptyDivClose ~ menu#main-menu > li:last-child {
+    padding-right: 200px !important;
+}
+
+.emptyDivOpen ~ menu#main-menu > li:last-child {
+    padding-right: 20px !important;
+}
+  
+header#main-header div.header-menu svg {
+    padding: 0;
+    margin: 0;
+}
+/* Ещё один вариант
+div.header-menu::before {
+    content: '';
+    background: url('../../assets/images/plane.svg');
+    background-size: 100px 49px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100px;
+    height: 49px;
+}
+*/
+
+/* Scroll button */
+.upButtonClose {
+    display: none;
+}
+
+.upButtonOpen {
+    display: block;
+    position: fixed;
+    bottom: 15%;
+    right: 0;
+    background-color: $color_dark;
+
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.upButtonOpen a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.upButtonOpen i {
+    font-size: 30px;
+    
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    header#main-header {
+        flex-direction: column;
+        padding-left: 0;
+        
+    }
+    div#logo-name {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .header-menu {
+        width: 100%;
+        justify-content: center;
+        background-color: $color_light;
+    }
+    
+    .plane {
+        display: none;
+    }
+
+    .emptyDivClose ~ menu#main-menu > li:last-child {
+        padding-right: 0 !important;
+    }
+    
+    .emptyDivOpen ~ menu#main-menu > li:last-child {
+        padding-right: 0 !important;
+    }
+
+    .sticky-menu { 
+        position: static;
+        
+    }
+    .collapse {
+        animation-name: none !important;
+        animation-duration: 0s;
+    }
+    .expand { 
+        animation-name: none !important;
+        animation-duration: 0s;
+        display: none !important;
+    }
+
+    .emptyDivOpen div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        height: 100%;
+        width: 100% !important;
+    }
+    
+    .emptyDivOpen div {
+        float: none;
+        margin-right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    menu#main-menu {
+        flex-direction: column;
+        width: 100%;
+        & > li {
+            width: 100%;
+            & > a {
+                width: 100%;
+                text-align: center;
+            }
+            &:first-child {
+                padding-left: 0px !important;
+            }
+        }
+        
+    }
+    menu#main-menu li {
+        border-bottom: $color_dark 1px solid;
+        
+    }
+    menu#main-menu li:nth-child(2) a {
+        display: block !important;
+        
+    }
+    menu#main-menu li:nth-child(2) {
+        flex-wrap: wrap;
+        & > ul {
+            width: 100% !important;
+            & > li {
+                width: 100% !important;
+                & > a {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    #main-header {
+        justify-content: flex-start !important;
+    }
+    div.header-menu {
+        height: auto !important;
+        flex-wrap: wrap;
+    }
+    ul.submenu {
+        position: static !important;
+    }
+}

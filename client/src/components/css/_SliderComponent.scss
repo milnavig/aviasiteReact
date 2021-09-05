@@ -1,0 +1,76 @@
+.parent {
+    box-sizing: border-box;
+    padding: 1.2rem 150px 1.2rem 150px;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgb(20, 20, 20);
+}
+.slider-container {
+ /* if you want to have a scrollbar, you can add overflow here */ 
+	overflow-x: hidden;
+	display: flex;
+	align-items: center;
+	margin: 0rem 0rem;
+    scroll-behavior: smooth;
+}
+.slider-wrapper {
+    display: flex;
+	align-items: center;
+	width: 100%;
+}
+.btn {
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+	height: 20px;
+    /*
+	box-shadow: 0 0 6.1px 0.9px grey;
+	padding: 5px;
+	width: 20px;
+	height: 20px;
+	background: grey;
+	text-align: center;
+	color: white;
+    border-radius: 50%;
+    */
+}
+.btn i {
+    color: white;
+    font-size: 32px;
+}
+.prev {
+	left: 90px;
+}
+.next {
+	right: 90px;
+}
+.disable {
+	opacity: 0.5;
+    pointer-events: none;
+}
+.child {
+    display: block;
+	padding: 0px 0px;
+
+	text-align: center;
+	width: 100%;
+	margin-right: 10px;
+}
+
+.child img {
+    display: block;
+    width: 480px;
+    height: 300px;
+}
+
+@media screen and (max-width: 500px) {
+    .parent {
+		padding: 0;
+	}
+    .prev {
+		left: 7%;
+	}
+	.next {
+		right: 7%;
+	}
+}

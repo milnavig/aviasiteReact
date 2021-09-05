@@ -1,0 +1,95 @@
+$dark_blue: #052C6E;
+
+#feedback-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../../assets/images/bg7.png");
+
+    .wrapper-3 {
+        width: 350px;
+        height: 400px;
+        margin-top: 35px;
+        position: relative;
+
+        .usr-feedback {
+            width: 325px;
+
+            .message {
+                height: 300px;
+                background-color: #F0F0F0;
+                /* серый цвет */
+                border-radius: 30px 30px 0 30px;
+                overflow-y: auto;
+
+                p {
+                    margin: 0;
+                    padding: 22px;
+                    line-height: 1.4;
+                    text-align: justify;
+                    
+                    i {
+                        quotes: "«" "»";
+
+                        &::before {
+                            content: open-quote;
+                        }
+                        &::after {
+                            content: close-quote;
+                        }
+                    }
+                }
+            }
+
+            img {
+                float: right;
+            }
+
+            .feedback-author {
+                margin-top: 30px;
+                float: right;
+
+                img {
+                    position: absolute;
+                    bottom: 40px;
+                    right: 0px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 23px;
+                    border: 3px solid white;
+
+                    &:hover {
+                        border: 3px solid $dark_blue;
+                        animation-name: colorchange-5;
+                        animation-duration: 2s;
+                    }
+                }
+            }
+        }
+        /*
+        &:nth-child(1) {
+            margin-left: 150px;
+        }
+
+        &:nth-child(3) {
+            margin-right: 150px;
+        }
+        */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    div#feedback-wrapper {
+        flex-direction: column;
+        
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .usr-feedback {
+        width: 90% !important;
+        
+    }
+    .wrapper-3 {
+        width: auto !important;
+    }
+}

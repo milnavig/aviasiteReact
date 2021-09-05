@@ -1,0 +1,168 @@
+/* Панель с социальными кнопками */
+header#info-panel {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    background-color: $color_light;
+    color: white;
+
+    ul#header-list {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        padding-right: 12%;
+        margin: 0;
+        /*
+        & > li:last-child {
+            
+        }
+        */
+        li {
+            display: block;
+            margin: 0;
+
+            &:nth-child(2) {
+                position: relative;
+            }
+
+            & > p {
+                margin: 0;
+                font-size: 18px;
+                padding: 7px 25px 0 15px;
+            }
+
+            & > a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                
+                height: 100%;
+                margin: auto;
+                padding: 0 25px 0 25px;
+            }
+
+            i {
+                display: block;
+                font-size: 17px;
+                width: 15px;
+                height: 15px;
+            }
+
+        }
+    }
+}
+
+ul#header-list li div:not(.hidNumbers) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.phone, .search {
+    padding: 0;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.fab, .fas {
+    color: white;
+}
+  
+.facebook:hover {
+    background-color: #3c5b9b;
+    transition: background-color .2s ease-in-out;
+}
+  
+.twitter:hover {
+    background-color: #359bed;
+    transition: background-color .2s ease-in-out;
+}
+  
+.telegram:hover {
+    background-color: #3ab6e5;
+    transition: background-color .2s ease-in-out;
+}
+  
+.rss:hover {
+    background-color: #f08421;
+    transition: background-color .2s ease-in-out;
+}
+
+.hidNumbers {
+    display: none;
+    
+}
+
+.hidNumbers ul {
+    /* transition: background-color 2s ease-out; Нельзя применять к блочным и none элементам */
+    background-color: rgba(0, 0, 0, .7);
+    list-style: none;
+    box-sizing: border-box;
+    width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+ul#header-list li:nth-child(2) .hidNumbers::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 100px;
+    background-image: url('triangle.svg');
+    background-size: 28px 28px;
+}
+*/
+
+ul#header-list li:nth-child(2) .hidNumbers div {
+    content: url('../../assets/images/triangle.svg');
+    width: 20px;
+    height: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+ul#header-list li:nth-child(2):hover .hidNumbers {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* z-index не работает без него */
+    z-index: 1000;
+}
+
+ul#header-list li:nth-child(2) .hidNumbers li {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+ul#header-list li:nth-child(2):hover .hidNumbers li:hover {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+@media screen and (max-width: 1200px) {
+    div#feedback-wrapper {
+        flex-direction: column;
+        
+    }
+    .phone, .search {
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #header-list:nth-child(1) p {
+        display: none;
+    }
+    ul#header-list li {
+        & > a {
+            
+            padding: 0 15px 0 15px !important;
+        }
+    }
+}

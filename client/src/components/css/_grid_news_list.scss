@@ -1,0 +1,64 @@
+$columns: 8% 1fr 350px 8%;
+$rows: 34px 170px auto 390px 35px;
+$areas: "info-panel info-panel info-panel info-panel" 
+        "main-header main-header main-header main-header"
+        ". list news-list-bar ."
+        "footer-4 footer-4 footer-4 footer-4" 
+        "footer-5 footer-5 footer-5 footer-5";
+
+$areas_1000px: "info-panel info-panel info-panel info-panel" 
+        "main-header main-header main-header main-header"
+        ". list list ."
+        ". news-list-bar news-list-bar ."
+        "footer-4 footer-4 footer-4 footer-4" 
+        "footer-5 footer-5 footer-5 footer-5";
+
+.grid-for-list-page {
+    padding: 0;
+    margin: 0;
+    background-image: url("../../assets/images/wall.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: -280px;
+    background-color: #93B4D1;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-template-areas: $areas;
+    
+}
+
+header#info-panel {
+    grid-area: info-panel;
+}
+
+header#main-header {
+    grid-area: main-header;
+}
+
+
+div.list {
+    grid-area: list;
+}
+
+div.news-list-bar {
+    grid-area: news-list-bar;
+}
+
+footer#footer-4 {
+    grid-area: footer-4;
+}
+
+footer#footer-5 {
+    grid-area: footer-5;
+    background-color: #052C6E;
+}
+
+@media screen and (max-width: 1200px) {
+    .grid-for-list-page {
+        grid-template-areas: $areas_1000px;
+        grid-template-rows: 34px auto auto auto auto 35px;
+    }
+    
+}

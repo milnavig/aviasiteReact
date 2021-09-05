@@ -1,0 +1,177 @@
+$columns: 50% 1fr 15%;
+$rows: 34px 170px 500px 40px 620px 40px 340px 40px 500px 40px 420px 390px 35px;
+$areas: "info-panel info-panel info-panel" 
+        "main-header main-header main-header" 
+        "main-info main-info main-info" 
+        "planes-header planes-header planes-header" 
+        "wrapper wrapper wrapper" 
+        "gallery-header gallery-header gallery-header" 
+        "slider slider slider" 
+        "feedback-header feedback-header feedback-header" 
+        "feedback feedback feedback" 
+        "contacts contacts contacts" 
+        "footer-1 footer-2 footer-2" 
+        "footer-4 footer-4 footer-4" 
+        "footer-5 footer-5 footer-5";
+
+$areas_1200px: "info-panel info-panel info-panel" 
+        "main-header main-header main-header"
+        "main-info main-info main-info" 
+        "planes-header planes-header planes-header" 
+        "wrapper wrapper wrapper" 
+        "gallery-header gallery-header gallery-header" 
+        "slider slider slider" 
+        "feedback-header feedback-header feedback-header" 
+        "feedback feedback feedback" 
+        "contacts contacts contacts" 
+        "footer-1 footer-1 footer-1"
+        "footer-2 footer-2 footer-2" 
+        "footer-4 footer-4 footer-4" 
+        "footer-5 footer-5 footer-5";
+
+.grid-for-main-page {
+    padding: 0;
+    margin: 0;
+    background-image: url("../../assets/images/wall.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position-y: -280px;
+    background-color: #93B4D1;
+    background-attachment: fixed; // закрепляем фоновое изображение
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-template-areas: $areas;
+}
+
+header#info-panel {
+    grid-area: info-panel;
+}
+
+header#main-header {
+    grid-area: main-header;
+}
+
+div#main-info {
+    grid-area: main-info;
+}
+
+div#planes-header {
+    grid-area: planes-header;
+}
+
+div#plane-1 {
+    grid-area: plane-1;
+}
+
+div#plane-2 {
+    grid-area: plane-2;
+}
+
+div#plane-3 {
+    grid-area: plane-3;
+}
+
+aside#news {
+    grid-area: newsbar;
+}
+
+div#gallery-header {
+    grid-area: gallery-header;
+}
+
+div#slider {
+    grid-area: slider;
+}
+
+div#feedback-header {
+    grid-area: feedback-header;
+}
+
+div#feedback-wrapper {
+    grid-area: feedback;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: white;
+}
+
+div#contacts-header {
+    grid-area: contacts;
+}
+
+footer#footer-1 {
+    grid-area: footer-1;
+    background-color: white;
+}
+
+footer#footer-2 {
+    grid-area: footer-2;
+    background-color: white;
+}
+
+footer#footer-4 {
+    grid-area: footer-4;
+}
+
+footer#footer-5 {
+    grid-area: footer-5;
+    background-color: #052C6E;
+}
+
+div#wrapper {
+    grid-area: wrapper;
+    background-color: white;
+    padding: 0;
+    padding: 10px 8% 10px 8%;
+    display: grid;
+    grid-template-columns: 25% 35% 40%;
+    grid-template-rows: 250px 350px;
+    grid-template-areas: "newsbar plane-1 plane-2" "newsbar plane-3 plane-3";
+    /*
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    */
+}
+
+@media screen and (max-width: 1200px) {
+    .grid-for-main-page {
+        grid-template-areas: $areas_1200px;
+        grid-template-rows: 34px 170px auto 40px auto 40px auto 40px auto 40px auto auto auto 35px;
+    }
+    div#wrapper {
+        grid-area: wrapper;
+        background-color: white;
+        padding: 0;
+        padding: 10px 8% 10px 8%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 250px 350px auto;
+        grid-template-areas: "plane-1 plane-2" "plane-3 plane-3" "newsbar newsbar";
+        /*
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        */
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .grid-for-main-page {
+        grid-template-areas: $areas_1200px;
+        grid-template-rows: 34px auto auto 40px auto 40px auto 40px auto 40px auto auto auto 35px;
+    }
+    div#wrapper {
+        grid-area: wrapper;
+        background-color: white;
+        padding: 0;
+        padding: 10px 8% 10px 8%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 350px 350px 350px auto;
+        grid-template-areas: "plane-1" "plane-2" "plane-3" "newsbar";
+        /*
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        */
+    }
+}
