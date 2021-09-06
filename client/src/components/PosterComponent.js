@@ -15,14 +15,14 @@ class PosterComponent extends React.Component {
                     <div id="forma1">
                         <form>
                             <h3>Маєте питання? Напишіть нам!</h3>
-                            <input maxlength="25" placeholder="Введите Ваше имя" className="field" />
-                            <input maxlength="25" placeholder="Введите Вашу фамилию" className="field" />
-                            <input type="email" maxlength="70" name="e-mail" placeholder="Введите Ваш email" className="field" />
+                            <input maxLength="25" placeholder="Введите Ваше имя" className="field" />
+                            <input maxLength="25" placeholder="Введите Вашу фамилию" className="field" />
+                            <input type="email" maxLength="70" name="e-mail" placeholder="Введите Ваш email" className="field" />
                             <textarea placeholder="Напишите нам" className="textarea"></textarea>
                             <p>Хочете отримувати розсилку?</p>
                             <div id="buttons1">
-                                <input type="radio" name="selector1" id="every-week" checked /><label for="every-week">Да, хочу</label>
-                                <input type="radio" name="selector1" id="every-month" /><label for="every-month">Нет, не хочу</label>
+                                <input type="radio" name="selector1" id="every-week" defaultChecked /><label htmlFor="every-week">Да, хочу</label>
+                                <input type="radio" name="selector1" id="every-month" /><label htmlFor="every-month">Нет, не хочу</label>
                             </div>
                             <button type="submit">Отправить</button>
                         </form>

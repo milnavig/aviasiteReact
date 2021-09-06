@@ -6,55 +6,67 @@ import img3 from '../assets/images/slider_pic/3.jpg';
 import img4 from '../assets/images/slider_pic/4.jpg';
 import img5 from '../assets/images/slider_pic/5.jpg';
 
-function SliderParentComponent(props) {
-    let data = [
-        img1,
-        img2,
-        img3,
-        img4,
-        img5
-    ];
+import { connect } from 'react-redux';
+import { fetchImages } from '../redux/ActionCreators';
 
-    let data2 = [
-        'Apple',
-        'Ball',
-        'Cat',
-        'Dog',
-        'Elephant',
-        'Fruits',
-        'Gorilla',
-        'Horse',
-        'Ink',
-        'Jug',
-        'Kite',
-        'Lemon',
-        'Orange',
-        'Paddy',
-        'Queen',
-        'Rose',
-        'Street',
-        'Tuesday',
-        'Umbrella',
-        'Vanilla',
-        'Wax',
-        'Xerox',
-        'Yarn',
-        'Zebra'
-    ];
-
-    return (
-        <div className='parent' id='slider'>
-            <SliderComponent>
-                {data.map((value, id) => {
-						return (
-							<div key={id} className='child'>
-								<img src={value} title="" />
-							</div>
-						);
-				})}
-            </SliderComponent>
-        </div>
-    );
+const mapDispatchToProps = dispatch => ({
+    fetchImages: () => { dispatch(fetchImages()) }
+});
+  
+const mapStateToProps = state => {
+    return {
+        images: state.news.images
+    }
 }
 
-export default SliderParentComponent;
+let data = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5
+];
+
+class SliderParentComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.fetchImages();
+    }
+
+    render() {
+        /*
+        return (
+            <div className='parent' id='slider'>
+                <SliderComponent>
+                    {this.props.images ? this.props.images.map((value, id) => {
+                            return (
+                                <div key={id} className='child'>
+                                    <img src={process.env.REACT_APP_API_URL + value.img} title="" />
+                                </div>
+                            );
+                    }) : null}
+                </SliderComponent>
+            </div>
+        );
+        */
+
+        return (
+            <div className='parent' id='slider'>
+                <SliderComponent>
+                    {data.map((value, id) => {
+                            return (
+                                <div key={id} className='child'>
+                                    <img src={value} title="" />
+                                </div>
+                            );
+                    })}
+                </SliderComponent>
+            </div>
+        );
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SliderParentComponent);

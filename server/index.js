@@ -11,6 +11,10 @@ const FileStore = require('session-file-store')(session);
 const passport = require('passport');
 require('./authenticate');
 
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./schema');
+const root =require('./resolverGraphql');
+
 const sequelize = require('./db');
 
 const PORT = process.env.PORT || 5000;
@@ -38,6 +42,11 @@ app.use(passport.session());
 app.use(express.static(path.resolve(__dirname, 'static')));
 app.use(fileupload({})); // image download
 app.use('/api', router);
+app.use('/graphql', graphqlHTTP({
+    graphiql: true,
+    schema,
+    rootValue: root
+}));
 // middleware для обработки ошибок должен идти последним!!!
 app.use(errorHandler); // middleware for error handling
 

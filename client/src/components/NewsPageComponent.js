@@ -9,11 +9,39 @@ import NewsArticleComponent from './NewsArticleComponent';
 import BreadCrumbsComponent from './BreadCrumbsComponent';
 import LastNewsBarComponent from './LastNewsBarComponent';
 
+import { connect } from 'react-redux';
+import { fetchSingleNews, fetchNewsShort } from '../redux/ActionCreators';
+
+const mapDispatchToProps = dispatch => ({
+    fetchSingleNews: (id) => { dispatch(fetchSingleNews(id)) },
+    fetchNewsShort: () => { dispatch(fetchNewsShort()) }
+});
+  
+const mapStateToProps = state => {
+    return {
+        newsFull: state.news.newsFull,
+        newsShort: state.news.newsShort,
+        isLoading: state.news.isLoading
+    }
+}
+
 class MainPageComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             style: 'none'
+        }
+    }
+
+    componentDidMount() {
+        //console.log(this.props.match.params.id);
+        this.props.fetchSingleNews(this.props.match.params.id);
+        this.props.fetchNewsShort();
+    }
+
+    componentWillReceiveProps(nextProps) { 
+        if (nextProps.match.params.id !== this.props.match.params.id) {
+            this.props.fetchSingleNews(nextProps.match.params.id);
         }
     }
 
@@ -24,12 +52,12 @@ class MainPageComponent extends React.Component {
                 <SubMenu toggle={(el) => this.setState(el)} />
                 <MainMenu toggle={(el) => this.setState(el)} />                
                 <BreadCrumbsComponent />
-                <NewsArticleComponent articleID={this.props.location.pathname.split('/')[2]} />
-                <LastNewsBarComponent />
+                <NewsArticleComponent articleID={this.props.location.pathname.split('/')[2]} newsFull={this.props.newsFull} isLoading={this.props.isLoading} />
+                <LastNewsBarComponent newsShort={this.props.newsShort} isLoading={this.props.isLoading} />
                 <FooterComponent />
             </div>
         );
     }
 }
 
-export default MainPageComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(MainPageComponent);

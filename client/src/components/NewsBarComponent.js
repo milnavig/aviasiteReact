@@ -15,7 +15,8 @@ const mapDispatchToProps = dispatch => ({
   
 const mapStateToProps = state => {
     return {
-        newsShort: state.newsShort
+        newsShort: state.news.newsShort,
+        isLoading: state.news.isLoading
     }
 }
   
@@ -25,17 +26,23 @@ class NewsBarComponent extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        //console.log(this.props.isLoading);
+        this.props.fetchNewsShort();
+      }
+
     fillWithData() {
+        if (this.props.isLoading || this.props.newsShort.length === 0) {
+            return <h3>No data</h3>;
+        }
         let arr = [];
         for (let i = 0; i < 9; i++) {
-            arr.push(<NewsContainerComponent pos={i + 1} header={data[i].headline} identifier={data[i].id} />)
+            arr.push(<NewsContainerComponent key={i} pos={i + 1} header={this.props.newsShort[i].headline} identifier={this.props.newsShort[i].id} />)
         }
         return arr;
     }
 
     render() {
-        
-
         return (
             <aside id="news">
                 <div id="news-header">

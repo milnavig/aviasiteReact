@@ -65,7 +65,7 @@ class MainMenu extends React.Component {
                 </div>
                 <div className={this.state.styles.includes('sticky-menu') ? 'upButtonOpen' : 'upButtonClose'}>
                     <a href="#top">
-                        <i class="fas fa-arrow-up"></i>
+                        <i className="fas fa-arrow-up"></i>
                     </a>
                 </div>
             </header>

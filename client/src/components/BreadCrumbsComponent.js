@@ -10,7 +10,7 @@ class BreadCrumbsComponent extends Component {
         return (
             <div className="breadcrumbs">
                 <div>
-                    <span><i class="fas fa-home"></i> <a href="#">Головна</a></span>
+                    <span><i className="fas fa-home"></i> <a href="#">Головна</a></span>
                     <span className="delimiter">/</span>
                     <span><a href="#">ГОТОВИТСЯ ЗАКАЗ НА 4 САМОЛЕТА АН-74</a></span>
                     

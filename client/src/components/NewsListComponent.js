@@ -5,24 +5,27 @@ import ReactPaginate from 'react-paginate'; // https://github.com/AdeleD/react-p
 import Loader from "react-loader-spinner";
 
 import {Link} from "react-router-dom";
+import Moment from 'moment';
 
 let NewsBlock = (props) => {
+    let date = +(props.data?.timestamp || 1630861714185);
+    date = Moment(date).format("DD.MM.YYYY, hh:mm:ss a"); ;
 
     return (
         <div className="news-block">
             <div className="news-block-wrapper">
-                <img src={props.data.image} title=""/>
+                <img src={process.env.REACT_APP_API_URL + props.data.img} title=""/>
                 <div className="content">
                     <h2><Link to={"/news/" + props.data.id}>{props.data.headline}</Link></h2>
-                    <p>{props.data.body.split(' ').slice(0, 30).join(' ') + '...'}</p>
+                    <p>{props.data.description.split(' ').slice(0, 80).join(' ') + '...'}</p>
                 </div>
             </div>
             
             <div className="addition-data">
-                    <i class="far fa-eye"></i>
+                    <i className="far fa-eye"></i>
                     <span>{"15 хв."}</span>
-                    <i class="far fa-clock"></i>
-                    <span>{props.data.date}</span>
+                    <i className="far fa-clock"></i>
+                    <span>{date}</span>
             </div>
         </div>
     );
@@ -34,23 +37,21 @@ class NewsListComponent extends React.Component {
         this.state = {
             style: 'none',
             offset: {selected: 0},
-            isLoading: true,
-            pageCount: 0,
-            news: []
         }
     }
-
-    componentDidMount() {
-        let num_pages = Math.ceil(data.length / 10);
-        this.setState({ pageCount: num_pages, isLoading: false });
-    }
-
+    
     handlePageClick = (page) => {  
-        this.setState({ offset: page });  
+        this.setState(function(prevState, props){
+            return { offset: page.selected }
+        });
+        
+        this.props.changePage(page.selected + 1);
     };
 
     render() {
-        return this.state.isLoading ? (
+        let pageCount = Math.ceil((this.props.pages[this.props.selectedPage] ? this.props.pages[this.props.selectedPage].count : 30) / 5);
+
+        return (!this.props.pages[this.props.selectedPage]) ? (
             <div className="list">
                 <div className="loader">
                     <Loader
@@ -66,13 +67,13 @@ class NewsListComponent extends React.Component {
         ) : (
             <div className="list">
                 <h1>Останні новини</h1>
-                {data.slice(this.state.offset.selected*10, this.state.offset.selected*10 + 10).map((news, index) => <NewsBlock data={news} key={index}></NewsBlock>)}
+                {this.props.pages[this.props.selectedPage].rows.map((news, index) => <NewsBlock data={news} key={index}></NewsBlock>)}
                 <ReactPaginate
                     previousLabel={''}
                     nextLabel={''}
                     breakLabel={'...'}
                     breakClassName={'break-me'}
-                    pageCount={this.state.pageCount}
+                    pageCount={pageCount}
                     marginPagesDisplayed={2}
                     pageRangeDisplayed={5}
                     onPageChange={this.handlePageClick}

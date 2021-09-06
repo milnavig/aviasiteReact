@@ -115,8 +115,8 @@ Rating.belongsTo(Product);
 Product.hasMany(BasketProduct);
 BasketProduct.belongsTo(Product);
 
-Product.hasMany(Comment);
-Comment.belongsTo(Product);
+Post.hasMany(Comment);
+Comment.belongsTo(Post);
 User.hasMany(Comment);
 Comment.belongsTo(User);
 

@@ -2,21 +2,27 @@ import React, {Component} from 'react';
 import './css/_LastNewsBarComponent.scss';
 import img1 from '../assets/images/news/1.jpg';
 import img2 from '../assets/images/news/2.jpg';
+import { NavLink } from 'react-router-dom';
 
 function LastNewsBarComponent(props) {
+    let news = props.newsShort.length <= 4 ? props.newsShort : props.newsShort.slice(0, 3);
+    console.log(news)
+
     return (
         <div className="news-list-bar"> 
-            <h2>НОВИНИ</h2>
-            <div className="news-list-item">
-                <img src={img1} title=""/>
-                <h3><a href="#">ГОТОВИТСЯ ЗАКАЗ НА 4 САМОЛЕТА АН-74</a></h3>
-                <p>Вице-премьер-министр Украины - Министр по вопросам стратегических отраслей промышленности Олег Уруский сообщил о подготовке в 2021 году нового заказа на самолеты Ан-74.</p>
-            </div>
-            <div className="news-list-item">
-                <img src={img2} title=""/>
-                <h3><a href="#">КИТАЙ МОГ БЫ ПОКУПАТЬ ДО 100 УКРАИНСКИХ ВЕРТОЛЕТОВ ЕЖЕГОДНО</a></h3>
-                <p>Китай мог бы покупать до 100 вертолетов Ми-8МСБ, который является глубокой модернизацией АО "Мотор Сич" вертолета Ми-8, ежегодно.</p>
-            </div>
+            <h2>ОСТАННІ НОВИНИ</h2>
+            {
+                news.map((el, id) => 
+                    <div className="news-list-item" key={id}>
+                        <NavLink to={'/news/' + el.id} style={{color: 'black', textDecoration: "none"}} >
+                            <img src={process.env.REACT_APP_API_URL + el.img} title=""/>
+                            <h3>{el.headline}</h3>
+                            <p>{el.description.length <= 50 ? el.description : el.description.split('').slice(0, 50).join('') + '...'}</p>
+                        </NavLink>
+                    </div>
+                )
+            }
+            
         </div>
     );
 }
