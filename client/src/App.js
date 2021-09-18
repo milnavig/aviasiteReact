@@ -21,8 +21,8 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          
-          <Route exact path="/">
+          { console.log('Current route: ' + process.env.PUBLIC_URL) }
+          <Route exact path={process.env.PUBLIC_URL + "/"}>
             <MainPageComponent />
           </Route>
           <Route path="/news/:id" component={NewsPageComponent}>

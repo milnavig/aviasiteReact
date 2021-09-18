@@ -2,7 +2,7 @@
   "name": "aviasite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://milnavig.github.io/aviaSite",
+  "homepage": "http://milnavig.github.io/aviasiteReact/",
   "dependencies": {
     "@apollo/client": "^3.4.10",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
