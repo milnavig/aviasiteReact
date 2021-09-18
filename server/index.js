@@ -13,7 +13,7 @@ require('./authenticate');
 
 const { graphqlHTTP } = require('express-graphql');
 const schema = require('./schema');
-const root =require('./resolverGraphql');
+const root = require('./resolverGraphql');
 
 const sequelize = require('./db');
 
