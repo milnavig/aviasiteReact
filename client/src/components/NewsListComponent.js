@@ -16,7 +16,7 @@ let NewsBlock = (props) => {
             <div className="news-block-wrapper">
                 <img src={process.env.REACT_APP_API_URL + props.data.img} title=""/>
                 <div className="content">
-                    <h2><Link to={"/news/" + props.data.id}>{props.data.headline}</Link></h2>
+                    <h2><Link to={process.env.PUBLIC_URL + "/news/" + props.data.id}>{props.data.headline}</Link></h2>
                     <p>{props.data.description.split(' ').slice(0, 80).join(' ') + '...'}</p>
                 </div>
             </div>

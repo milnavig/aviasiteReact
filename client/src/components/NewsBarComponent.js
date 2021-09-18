@@ -52,7 +52,7 @@ class NewsBarComponent extends React.Component {
                     {this.fillWithData()}
                 </div>
                 <div className="news-continue">
-                    <Link to="/topnews"><span>Наступні новини</span></Link>
+                    <Link to={process.env.PUBLIC_URL + "/topnews"}><span>Наступні новини</span></Link>
                 </div>
             </aside>
         );

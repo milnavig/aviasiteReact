@@ -30,7 +30,7 @@ class NewsContainerComponent extends React.Component {
             <div className="news-wrapper">
                 <div className={this.state.styles}><span>{this.props.pos}</span></div>
                 <div className="news-header" onMouseEnter={(e) => this.enterArea(e)} onMouseLeave={(e) => this.leaveArea(e)}>
-                    <h3><Link to={"/news/" + this.props.identifier}>{this.props.header}</Link></h3>
+                    <h3><Link to={process.env.PUBLIC_URL + "/news/" + this.props.identifier}>{this.props.header}</Link></h3>
                 </div>
             </div>
         );
