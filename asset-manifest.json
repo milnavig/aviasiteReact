@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/aviasiteReact/static/css/main.98cd8004.chunk.css",
-    "main.js": "/aviasiteReact/static/js/main.ef596d09.chunk.js",
-    "main.js.map": "/aviasiteReact/static/js/main.ef596d09.chunk.js.map",
+    "main.js": "/aviasiteReact/static/js/main.c5a01048.chunk.js",
+    "main.js.map": "/aviasiteReact/static/js/main.c5a01048.chunk.js.map",
     "runtime-main.js": "/aviasiteReact/static/js/runtime-main.2754d7c5.js",
     "runtime-main.js.map": "/aviasiteReact/static/js/runtime-main.2754d7c5.js.map",
     "static/js/2.27b49ad4.chunk.js": "/aviasiteReact/static/js/2.27b49ad4.chunk.js",
@@ -42,6 +42,6 @@
     "static/js/runtime-main.2754d7c5.js",
     "static/js/2.27b49ad4.chunk.js",
     "static/css/main.98cd8004.chunk.css",
-    "static/js/main.ef596d09.chunk.js"
+    "static/js/main.c5a01048.chunk.js"
   ]
 }
