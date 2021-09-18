@@ -42,22 +42,22 @@ class MainMenu extends React.Component {
             <header id="main-header">
                 <div id="logo-name">
                     <img src={logo} title="AirClub" id="logo" />
-                    <div id="site-name"><NavLink to={'/'} style={{textDecoration: 'none', color: 'white'}} ><span>Air</span>Club&trade;</NavLink></div>
+                    <div id="site-name"><NavLink to={process.env.PUBLIC_URL + '/'} style={{textDecoration: 'none', color: 'white'}} ><span>Air</span>Club&trade;</NavLink></div>
                 </div>
                 <div className={this.state.styles.join(' ')}>
                     <div className={this.state.styles.includes('sticky-menu') ? 'emptyDivOpen collapse' : 'emptyDivClose'}></div>
                     <div className="plane"><img src={plane} title="" /></div>
                     <menu id="main-menu">
-                        <li><a href="#">О нас</a></li>
+                        <li><NavLink to={process.env.PUBLIC_URL + '/aboutus'} style={{textDecoration: 'none', color: 'white'}} >О нас</NavLink></li>
                         <li><a href="#">Каталог</a>
                             <ul className="submenu">
-                                <li><a href="#">Обучение</a></li>
-                                <li><a href="#">Полёты</a></li>
-                                <li><a href="#">Аренда</a></li>
+                                <li><NavLink to={process.env.PUBLIC_URL + '/education'} style={{textDecoration: 'none', color: 'white'}} >Обучение</NavLink></li>
+                                <li><NavLink to={process.env.PUBLIC_URL + '/flights'} style={{textDecoration: 'none', color: 'white'}} >Полёты</NavLink></li>
+                                <li><NavLink to={process.env.PUBLIC_URL + '/rental'} style={{textDecoration: 'none', color: 'white'}} >Аренда</NavLink></li>
                             </ul>
                         </li>
-                        <li><a href="#">Блог</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><NavLink to={process.env.PUBLIC_URL + '/topnews'} style={{textDecoration: 'none', color: 'white'}} >Блог</NavLink></li>
+                        <li><NavLink to={process.env.PUBLIC_URL + '/contacts'} style={{textDecoration: 'none', color: 'white'}} >Контакты</NavLink></li>
                     </menu>
                     <div className={this.state.styles.includes('sticky-menu') ? 'emptyDivOpen expand' : 'emptyDivClose'}>
                         <div onClick={(e) => this.openSearch(e)}><i className="fas fa-search fa-lg"></i></div>

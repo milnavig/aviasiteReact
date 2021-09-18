@@ -25,15 +25,15 @@ function App() {
           <Route exact path={process.env.PUBLIC_URL + "/"}>
             <MainPageComponent />
           </Route>
-          <Route path="/news/:id" component={NewsPageComponent}>
+          <Route path={process.env.PUBLIC_URL + "/news/:id"} component={NewsPageComponent}>
           </Route>
-          <Route path="/topnews">
+          <Route path={process.env.PUBLIC_URL + "/topnews"}>
             <NewsListPageComponent />
           </Route>
-          <Route path="/404">
+          <Route path={process.env.PUBLIC_URL + "/404"}>
             <PageNotFoundComponent />
           </Route>
-          <Redirect to="/404" />
+          <Redirect to={process.env.PUBLIC_URL + "/404"} />
         </Switch>
       </Router>
     </Provider>

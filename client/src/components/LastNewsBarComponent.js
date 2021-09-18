@@ -14,7 +14,7 @@ function LastNewsBarComponent(props) {
             {
                 news.map((el, id) => 
                     <div className="news-list-item" key={id}>
-                        <NavLink to={'/news/' + el.id} style={{color: 'black', textDecoration: "none"}} >
+                        <NavLink to={process.env.PUBLIC_URL + '/news/' + el.id} style={{color: 'black', textDecoration: "none"}} >
                             <img src={process.env.REACT_APP_API_URL + el.img} title=""/>
                             <h3>{el.headline}</h3>
                             <p>{el.description.length <= 50 ? el.description : el.description.split('').slice(0, 50).join('') + '...'}</p>
