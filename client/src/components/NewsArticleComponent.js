@@ -37,7 +37,8 @@ class NewsArticleComponent extends React.Component {
         let date = +(news?.timestamp || 1630861714185);
         date = Moment(date).format("DD.MM.YYYY, hh:mm:ss a"); ;
         console.log(date);
-        
+        console.log(this.props.articleID)
+        console.log(this.props.newsFull);
         return (
             <div className="article">
                 <h1>

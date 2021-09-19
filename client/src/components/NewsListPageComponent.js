@@ -35,6 +35,7 @@ class NewsListPageComponent extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.fetchNewsShort();
         this.props.fetchNewsSet(this.state.selectedPage, 5);
     }

@@ -35,6 +35,7 @@ class MainPageComponent extends React.Component {
 
     componentDidMount() {
         //console.log(this.props.match.params.id);
+        window.scrollTo(0, 0);
         this.props.fetchSingleNews(this.props.match.params.id);
         this.props.fetchNewsShort();
     }
@@ -52,7 +53,7 @@ class MainPageComponent extends React.Component {
                 <SubMenu toggle={(el) => this.setState(el)} />
                 <MainMenu toggle={(el) => this.setState(el)} />                
                 <BreadCrumbsComponent />
-                <NewsArticleComponent articleID={this.props.location.pathname.split('/')[2]} newsFull={this.props.newsFull} isLoading={this.props.isLoading} />
+                <NewsArticleComponent articleID={this.props.location.pathname.split('/')[3]} newsFull={this.props.newsFull} isLoading={this.props.isLoading} />
                 <LastNewsBarComponent newsShort={this.props.newsShort} isLoading={this.props.isLoading} />
                 <FooterComponent />
             </div>
